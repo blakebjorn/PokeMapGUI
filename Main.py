@@ -7,6 +7,9 @@ import time
 import webbrowser
 from ast import literal_eval
 
+if getattr(sys, 'frozen', True):
+    sys.stderr = open('Errors.txt', 'a')
+
 class MainWindow(QtGui.QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
@@ -77,7 +80,11 @@ class MainWindow(QtGui.QMainWindow):
             self.sourceFolder = "PokemonGo-Map-develop"
             self.sourceScript = "runserver.py"
 
-        os.chdir(self.sourceFolder)
+        try:
+            os.chdir(self.sourceFolder)
+        except:
+            QtGui.QMessageBox.warning(self,"Error","No source folder found, place source folder in working directory and restart the application.")
+
         self.show()
 
     def save_settings(self):
@@ -128,7 +135,10 @@ class MainWindow(QtGui.QMainWindow):
             argsDict['-l'] = self.locationTextBox.text()
 
             argsList = []
-            argsList.append(sys.executable)
+            if getattr(sys, 'frozen', False):
+                argsList.append(os.path.join(os.path.dirname(sys.executable),"Python","python.exe"))
+            else:
+                argsList.append(sys.executable)
             argsList.append(self.sourceScript)
             for key in argsDict.keys():
                 argsList.append(key)
@@ -163,3 +173,6 @@ if __name__ == "__main__":
     mainWin.show()
     mainWin.setFocus()
     app.exec_()
+    if getattr(sys, 'frozen', False):
+        sys.stderr.close()
+        sys.stderr = sys.__stderr__
