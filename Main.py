@@ -135,7 +135,7 @@ class MainWindow(QtGui.QMainWindow):
             argsDict['-l'] = self.locationTextBox.text()
 
             argsList = []
-            if getattr(sys, 'frozen', False):
+            if getattr(sys, 'frozen', True):
                 argsList.append(os.path.join(os.path.dirname(sys.executable),"Python","python.exe"))
             else:
                 argsList.append(sys.executable)
@@ -173,6 +173,6 @@ if __name__ == "__main__":
     mainWin.show()
     mainWin.setFocus()
     app.exec_()
-    if getattr(sys, 'frozen', False):
+    if getattr(sys, 'frozen', True):
         sys.stderr.close()
         sys.stderr = sys.__stderr__
