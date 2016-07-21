@@ -139,6 +139,7 @@ class MainWindow(QtGui.QMainWindow):
                 argsList.append(os.path.join(os.path.dirname(sys.executable),"Python","python.exe"))
             else:
                 argsList.append(sys.executable)
+
             argsList.append(self.sourceScript)
             for key in argsDict.keys():
                 argsList.append(key)
