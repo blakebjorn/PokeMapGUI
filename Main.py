@@ -77,7 +77,11 @@ class MainWindow(QtGui.QMainWindow):
             self.sourceFolder = "PokemonGo-Map-develop"
             self.sourceScript = "runserver.py"
 
-        os.chdir(self.sourceFolder)
+        try:
+            os.chdir(self.sourceFolder)
+        except OSError:
+            QtGui.QMessageBox.warning(self,"Error","No source folder found, place source folder in working directory and restart the application.")
+            
         self.show()
 
     def save_settings(self):
