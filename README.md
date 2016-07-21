@@ -2,7 +2,8 @@
 
 *    WINDOWS INSTALLER: http://www.mediafire.com/download/h3mlrz3ak7ma6ib/PokeGoMap_Installer.exe
 *    bundles all dependencies, including python 2.7.12 distribution (does not install python or add to PATH)
-*    
+
+   
 PySide GUI wrapper for https://github.com/AHAAAAAAA/PokemonGo-Map
 
 Dependencies: PySide (pip install pyside)
