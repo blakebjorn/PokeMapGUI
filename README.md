@@ -1,4 +1,8 @@
 # PokeMapGUI
+
+*    WINDOWS INSTALLER: http://www.mediafire.com/download/h3mlrz3ak7ma6ib/PokeGoMap_Installer.exe
+*    bundles all dependencies, including python 2.7.12 distribution (does not install python or add to PATH)
+*    
 PySide GUI wrapper for https://github.com/AHAAAAAAA/PokemonGo-Map
 
 Dependencies: PySide (pip install pyside)
@@ -13,10 +17,6 @@ Dependencies: PySide (pip install pyside)
 ![ScreenShot](https://github.com/blakebjorn/PokeMapGUI/blob/master/Screenshot.png)
 
 
-*    WINDOWS INSTALLER: https://mega.nz/#!XcQGxADC!Qdj9JUPyZx1_9mThFDDP5Ay5XnfmWPQRowwq9UQJ8wU
-*    bundles all dependencies, including python 2.7.12 distribution (does not install python or add to PATH)
-*    if requirements change, they can be updated by running the python .exe and entering the following:
-*    import pip
-*    pip.main(['install','DEPENDENCYNAME'])
+
 
 donate: 1NCEiwtzTwAM2jsiWtCeqspE1yvNbgtyAC
